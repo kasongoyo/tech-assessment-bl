@@ -1,0 +1,19 @@
+# main docker compose file
+# docker-compose variables can only be specified either in host shell or using
+# .env file located in the same level as docker-compose file. see https://github.com/docker/compose/issues/4001#issuecomment-251520659
+version: '3.7'
+networks:
+  app-tier:
+    driver: bridge
+    name: nipale-api-dev-network
+services:
+  app:
+    build: .
+    ports:
+      - '8080:8080'
+    volumes:
+      - .:/home/node/app
+      - /home/node/app/node_modules
+    command: npm start
+    networks: 
+      - app-tier

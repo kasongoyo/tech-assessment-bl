@@ -1,0 +1,24 @@
+
+# dependencies
+/node_modules
+
+# production
+.tmp
+*.log
+/logs/
+/uploads/
+
+# misc
+.DS_Store
+*.env*
+.env.*
+!*.env.example
+!*.env.k8secrets.example
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.idea
+.vscode/
+prod.yml
+mcc-mnc.json
